@@ -256,9 +256,9 @@ const Appointment = () => {
               </p>{" "}
               {/* [25, 26] */}
             </div>
-            <p className="text-gray-500 font-medium mt-4">
+            <p className="text-red-500 font-medium mt-4">
               Appointment fee:{" "}
-              <span className="text-gray-600">
+              <span className="text-green-600">
                 {currencySymbol}
                 {docInfo.fees}
               </span>{" "}
@@ -267,7 +267,7 @@ const Appointment = () => {
           </div>
         </div>
         {/* ---------- Booking Slots ---------- */}
-        <div className="sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700">
+        <div className="sm:ml-72 sm:pl-4 mt-4 font-medium text-blue-500">
           <p>Booking slots</p> {/* [6, 28] */}
           <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4">
             {docSlots.length > 0 &&
@@ -276,7 +276,7 @@ const Appointment = () => {
                 return (
                   <div
                     onClick={() => setSlotIndex(index)}
-                    className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? "bg-primary text-white" : "border border-gray-200"}`}
+                    className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ? "bg-primary text-black" : "border border-blue-300"}`}
                     key={index}>
                     <p>
                       {firstSlot && daysOfWeek[firstSlot.dateTime.getDay()]}
@@ -294,7 +294,7 @@ const Appointment = () => {
                     setSlotTime(item.time);
                     setSelectedSlot(item);
                   }}
-                  className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime ? "bg-primary text-white" : "text-gray-400 border border-gray-300"}`}
+                  className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime ? "bg-primary text-black" : "text-blue-900 border border-blue-300"}`}
                   key={index}>
                   {item.time.toLowerCase()}
                 </p>
